@@ -8,15 +8,7 @@ Types:
 
 ## ID
 
-Methods:
-
-- <code title="get /contact/{customerId}/id/{id}">client.contact.id.<a href="./src/resources/contact/id.ts">retrieve</a>(customerId, id) -> SentDmServicesContractsDataContactDto</code>
-
 ## Phone
-
-Methods:
-
-- <code title="get /contact/{customerId}/phone/{phoneNumber}">client.contact.phone.<a href="./src/resources/contact/phone.ts">retrieve</a>(customerId, phoneNumber) -> SentDmServicesContractsDataContactDto</code>
 
 # Contacts
 
