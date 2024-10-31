@@ -10,9 +10,9 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Installation
 
-```sh
+
 npm install sentdm
-```
+
 
 ## Usage
 
@@ -208,7 +208,9 @@ import 'sentdm/shims/web';
 import Sent from 'sentdm';
 ```
 
+
 To do the inverse, add `import "sentdm/shims/node"` (which does import polyfills).
+
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/sentdm/sent-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
