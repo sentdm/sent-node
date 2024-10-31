@@ -1,24 +1,25 @@
-# Shared
-
-Types:
-
-- <code><a href="./src/resources/shared.ts">SentDmServicesContractsDataContactDto</a></code>
-
-# Contact
-
-## ID
-
-## Phone
-
 # Contacts
 
 Types:
 
-- <code><a href="./src/resources/contacts.ts">ContactListResponse</a></code>
+- <code><a href="./src/resources/contacts/contacts.ts">SentDmServicesContractsDataContactDto</a></code>
+- <code><a href="./src/resources/contacts/contacts.ts">ContactListResponse</a></code>
 
 Methods:
 
-- <code title="get /contacts">client.contacts.<a href="./src/resources/contacts.ts">list</a>({ ...params }) -> unknown</code>
+- <code title="get /contacts">client.contacts.<a href="./src/resources/contacts/contacts.ts">list</a>({ ...params }) -> unknown</code>
+
+## ID
+
+Methods:
+
+- <code title="get /contacts/{customerId}/id/{id}">client.contacts.id.<a href="./src/resources/contacts/id.ts">retrieve</a>(customerId, id) -> SentDmServicesContractsDataContactDto</code>
+
+## Phone
+
+Methods:
+
+- <code title="get /contacts/{customerId}/phone/{phoneNumber}">client.contacts.phone.<a href="./src/resources/contacts/phone.ts">retrieve</a>(customerId, phoneNumber) -> SentDmServicesContractsDataContactDto</code>
 
 # Messages
 

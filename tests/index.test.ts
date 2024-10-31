@@ -151,13 +151,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['SENT_BASE_URL'] = ''; // empty
       const client = new Sent({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://sent.dm');
+      expect(client.baseURL).toEqual('https://api.sent.dm');
     });
 
     test('blank env variable', () => {
       process.env['SENT_BASE_URL'] = '  '; // blank
       const client = new Sent({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://sent.dm');
+      expect(client.baseURL).toEqual('https://api.sent.dm');
     });
   });
 
