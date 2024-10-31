@@ -1,5 +1,5 @@
 {
-  "name": "sent",
+  "name": "sentdm",
   "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Sent API",
   "author": "Sent <team@sent.com>",
@@ -60,8 +60,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "sent": ".",
-    "sent/*": "./src/*"
+    "sentdm": ".",
+    "sentdm/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

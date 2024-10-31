@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'sent/core';
-import { Blob } from 'sent/_shims/index';
-import { toFile } from 'sent';
+import { multipartFormRequestOptions, createForm } from 'sentdm/core';
+import { Blob } from 'sentdm/_shims/index';
+import { toFile } from 'sentdm';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
