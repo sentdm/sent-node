@@ -1,21 +1,18 @@
 # Sent Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/sent.svg)](https://npmjs.org/package/sent) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sent)
+[![NPM version](https://img.shields.io/npm/v/sentdm.svg)](https://npmjs.org/package/sentdm) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sentdm)
 
 This library provides convenient access to the Sent REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [sent.dm](https://sent.dm). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [www.sent.dm](https://www.sent.dm/docs). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Installation
 
-```sh
-npm install git+ssh://git@github.com:sentdm/sent-node.git
-```
 
-> [!NOTE]
-> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install sent`
+npm install sentdm
+
 
 ## Usage
 
@@ -23,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Sent from 'sent';
+import Sent from 'sentdm';
 
 const client = new Sent();
 
@@ -40,7 +37,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Sent from 'sent';
+import Sent from 'sentdm';
 
 const client = new Sent();
 
@@ -207,11 +204,13 @@ add the following import before your first import `from "Sent"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import 'sent/shims/web';
-import Sent from 'sent';
+import 'sentdm/shims/web';
+import Sent from 'sentdm';
 ```
 
-To do the inverse, add `import "sent/shims/node"` (which does import polyfills).
+
+To do the inverse, add `import "sentdm/shims/node"` (which does import polyfills).
+
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/sentdm/sent-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -221,7 +220,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import Sent from 'sent';
+import Sent from 'sentdm';
 
 const client = new Sent({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {

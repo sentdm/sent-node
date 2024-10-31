@@ -8,7 +8,7 @@ import * as API from './resources/index';
 
 export interface ClientOptions {
   /**
-   * API Key needed for authentication, sent in the header `x-api-key`.
+   * API key used for authenticating requests.
    */
   apiKey?: string | undefined;
 
@@ -81,7 +81,7 @@ export class Sent extends Core.APIClient {
    * API Client for interfacing with the Sent API.
    *
    * @param {string | undefined} [opts.apiKey=process.env['X_API_KEY'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['SENT_BASE_URL'] ?? https://sent.dm] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['SENT_BASE_URL'] ?? https://api.sent.dm] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -103,7 +103,7 @@ export class Sent extends Core.APIClient {
     const options: ClientOptions = {
       apiKey,
       ...opts,
-      baseURL: baseURL || `https://sent.dm`,
+      baseURL: baseURL || `https://api.sent.dm`,
     };
 
     super({
@@ -185,6 +185,7 @@ export namespace Sent {
   export import RequestOptions = Core.RequestOptions;
 
   export import Contacts = API.Contacts;
+  export import SentDmServicesContractsDataContactDto = API.SentDmServicesContractsDataContactDto;
   export import ContactListResponse = API.ContactListResponse;
   export import ContactListParams = API.ContactListParams;
 
@@ -195,15 +196,15 @@ export namespace Sent {
   export import MessagePhoneNumberParams = API.MessagePhoneNumberParams;
 
   export import SMS = API.SMS;
-  export import SMSPayload = API.SMSPayload;
+  export import SentDmServicesContractsDataSMSPayloadDto = API.SentDmServicesContractsDataSMSPayloadDto;
   export import SMSListParams = API.SMSListParams;
 
   export import Whatsapp = API.Whatsapp;
-  export import WhatsappPayload = API.WhatsappPayload;
+  export import SentDmServicesContractsDataWhatsappPayloadDto = API.SentDmServicesContractsDataWhatsappPayloadDto;
   export import WhatsappListParams = API.WhatsappListParams;
 
   export import Templates = API.Templates;
-  export import TemplateResponse = API.TemplateResponse;
+  export import SentDmServicesContractsResponsesTemplateResponse = API.SentDmServicesContractsResponsesTemplateResponse;
   export import TemplateCreateResponse = API.TemplateCreateResponse;
   export import TemplateUpdateResponse = API.TemplateUpdateResponse;
   export import TemplateListResponse = API.TemplateListResponse;
@@ -213,11 +214,9 @@ export namespace Sent {
   export import TemplateListParams = API.TemplateListParams;
 
   export import Customers = API.Customers;
-  export import Customer = API.Customer;
+  export import SentDmServicesContractsDataCustomerDto = API.SentDmServicesContractsDataCustomerDto;
   export import CustomerDeleteResponse = API.CustomerDeleteResponse;
   export import CustomerUpdateParams = API.CustomerUpdateParams;
-
-  export import Contact = API.Contact;
 }
 
 export default Sent;
