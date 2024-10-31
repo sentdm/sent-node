@@ -1,6 +1,6 @@
 # Sent Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/@sent/node.svg)](https://npmjs.org/package/@sent/node) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@sent/node)
+[![NPM version](https://img.shields.io/npm/v/sentdm.svg)](https://npmjs.org/package/sentdm) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sentdm)
 
 This library provides convenient access to the Sent REST API from server-side TypeScript or JavaScript.
 
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install @sent/node
+npm install sentdm
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Sent from '@sent/node';
+import Sent from 'sentdm';
 
 const client = new Sent();
 
@@ -37,7 +37,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Sent from '@sent/node';
+import Sent from 'sentdm';
 
 const client = new Sent();
 
@@ -204,11 +204,11 @@ add the following import before your first import `from "Sent"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import '@sent/node/shims/web';
-import Sent from '@sent/node';
+import 'sentdm/shims/web';
+import Sent from 'sentdm';
 ```
 
-To do the inverse, add `import "@sent/node/shims/node"` (which does import polyfills).
+To do the inverse, add `import "sentdm/shims/node"` (which does import polyfills).
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/sentdm/sent-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -218,7 +218,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import Sent from '@sent/node';
+import Sent from 'sentdm';
 
 const client = new Sent({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {
