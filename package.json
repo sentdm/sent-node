@@ -1,6 +1,6 @@
 {
   "name": "@sent/node",
-  "version": "0.0.1-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Sent API",
   "author": "Sent <team@sent.dm>",
   "types": "dist/index.d.ts",
