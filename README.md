@@ -1,6 +1,6 @@
 # Sent Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/sent.svg)](https://npmjs.org/package/sent) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sent)
+[![NPM version](https://img.shields.io/npm/v/@sent/node.svg)](https://npmjs.org/package/@sent/node) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@sent/node)
 
 This library provides convenient access to the Sent REST API from server-side TypeScript or JavaScript.
 
@@ -11,11 +11,8 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:sentdm/sent-node.git
+npm install @sent/node
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install sent`
 
 ## Usage
 
@@ -23,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Sent from 'sent';
+import Sent from '@sent/node';
 
 const client = new Sent();
 
@@ -40,7 +37,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Sent from 'sent';
+import Sent from '@sent/node';
 
 const client = new Sent();
 
@@ -207,11 +204,11 @@ add the following import before your first import `from "Sent"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import 'sent/shims/web';
-import Sent from 'sent';
+import '@sent/node/shims/web';
+import Sent from '@sent/node';
 ```
 
-To do the inverse, add `import "sent/shims/node"` (which does import polyfills).
+To do the inverse, add `import "@sent/node/shims/node"` (which does import polyfills).
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/sentdm/sent-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -221,7 +218,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import Sent from 'sent';
+import Sent from '@sent/node';
 
 const client = new Sent({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {

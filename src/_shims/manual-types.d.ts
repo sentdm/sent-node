@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'sent/shims/node'
- *   import 'sent/shims/web'
+ *   import '@sent/node/shims/node'
+ *   import '@sent/node/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */
