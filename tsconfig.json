@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@sent/node/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "@sent/node/*": ["src/*"],
-      "@sent/node": ["src/index.ts"],
+      "sentdm/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "sentdm/*": ["src/*"],
+      "sentdm": ["src/index.ts"],
     },
     "noEmit": true,
 
