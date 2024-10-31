@@ -14,4 +14,4 @@ Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/sentdm/sent
 
 * go live ([#1](https://github.com/sentdm/sent-node/issues/1)) ([9e7d1ac](https://github.com/sentdm/sent-node/commit/9e7d1ac28875aca0edda778691dfb9657669603c))
 * update SDK settings ([#3](https://github.com/sentdm/sent-node/issues/3)) ([637e824](https://github.com/sentdm/sent-node/commit/637e82433f081d79e7d8172aa8901731eec5a050))
-* update SDK settings ([#5](https://github.com/sentdm/sent-node/issues/5)) ([ce5d691](https://github.com/sentdm/sent-node/commit/ce5d691174d12cc6bf8daccfd7b83e4a8611d82c))
+
