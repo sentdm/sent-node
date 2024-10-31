@@ -9,9 +9,9 @@ export function getRuntime({ manuallyImported }: { manuallyImported?: boolean } 
   const recommendation =
     manuallyImported ?
       `You may need to use polyfills`
-    : `Add one of these imports before your first \`import … from 'sentdm'\`:
-- \`import 'sentdm/shims/node'\` (if you're running on Node)
-- \`import 'sentdm/shims/web'\` (otherwise)
+    : `Add one of these imports before your first \`import … from '@sentdm/node'\`:
+- \`import '@sentdm/node/shims/node'\` (if you're running on Node)
+- \`import '@sentdm/node/shims/web'\` (otherwise)
 `;
 
   let _fetch, _Request, _Response, _Headers;

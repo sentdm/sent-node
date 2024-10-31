@@ -55,12 +55,12 @@ $ cd sent-node
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link sentdm
+$ yarn link @sentdm/node
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global sentdm
+$ pnpm link -—global @sentdm/node
 ```
 
 ## Running tests
