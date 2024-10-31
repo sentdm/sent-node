@@ -5,11 +5,18 @@ import * as Core from '../core';
 import * as CustomersAPI from './customers';
 
 export class Customers extends APIResource {
-  retrieve(id: string, options?: Core.RequestOptions): Core.APIPromise<Customer> {
+  retrieve(
+    id: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<SentDmServicesContractsDataCustomerDto> {
     return this._client.get(`/customers/${id}`, options);
   }
 
-  update(id: string, body: CustomerUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Customer> {
+  update(
+    id: string,
+    body: CustomerUpdateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<SentDmServicesContractsDataCustomerDto> {
     return this._client.put(`/customers/${id}`, { body, ...options });
   }
 
@@ -18,7 +25,7 @@ export class Customers extends APIResource {
   }
 }
 
-export interface Customer {
+export interface SentDmServicesContractsDataCustomerDto {
   id?: string;
 
   createdAt?: string;
@@ -47,11 +54,11 @@ export interface Customer {
 export type CustomerDeleteResponse = unknown;
 
 export interface CustomerUpdateParams {
-  customer?: Customer;
+  customer?: SentDmServicesContractsDataCustomerDto;
 }
 
 export namespace Customers {
-  export import Customer = CustomersAPI.Customer;
+  export import SentDmServicesContractsDataCustomerDto = CustomersAPI.SentDmServicesContractsDataCustomerDto;
   export import CustomerDeleteResponse = CustomersAPI.CustomerDeleteResponse;
   export import CustomerUpdateParams = CustomersAPI.CustomerUpdateParams;
 }
