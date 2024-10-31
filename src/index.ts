@@ -8,7 +8,7 @@ import * as API from './resources/index';
 
 export interface ClientOptions {
   /**
-   * API Key for accessing the Sent DM Core API
+   * API key used for authenticating requests.
    */
   apiKey?: string | undefined;
 
@@ -81,7 +81,7 @@ export class Sent extends Core.APIClient {
    * API Client for interfacing with the Sent API.
    *
    * @param {string | undefined} [opts.apiKey=process.env['X_API_KEY'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['SENT_BASE_URL'] ?? https://sent.dm] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['SENT_BASE_URL'] ?? https://api.sent.dm] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -103,7 +103,7 @@ export class Sent extends Core.APIClient {
     const options: ClientOptions = {
       apiKey,
       ...opts,
-      baseURL: baseURL || `https://sent.dm`,
+      baseURL: baseURL || `https://api.sent.dm`,
     };
 
     super({
@@ -119,7 +119,6 @@ export class Sent extends Core.APIClient {
     this.apiKey = apiKey;
   }
 
-  contact: API.Contact = new API.Contact(this);
   contacts: API.Contacts = new API.Contacts(this);
   messages: API.Messages = new API.Messages(this);
   sms: API.SMS = new API.SMS(this);
@@ -185,9 +184,8 @@ export import fileFromPath = Uploads.fileFromPath;
 export namespace Sent {
   export import RequestOptions = Core.RequestOptions;
 
-  export import Contact = API.Contact;
-
   export import Contacts = API.Contacts;
+  export import SentDmServicesContractsDataContactDto = API.SentDmServicesContractsDataContactDto;
   export import ContactListResponse = API.ContactListResponse;
   export import ContactListParams = API.ContactListParams;
 
@@ -219,8 +217,6 @@ export namespace Sent {
   export import SentDmServicesContractsDataCustomerDto = API.SentDmServicesContractsDataCustomerDto;
   export import CustomerDeleteResponse = API.CustomerDeleteResponse;
   export import CustomerUpdateParams = API.CustomerUpdateParams;
-
-  export import SentDmServicesContractsDataContactDto = API.SentDmServicesContractsDataContactDto;
 }
 
 export default Sent;

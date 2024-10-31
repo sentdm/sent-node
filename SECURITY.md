@@ -20,7 +20,7 @@ or products provided by Sent please follow the respective company's security rep
 
 ### Sent Terms and Policies
 
-Please contact dev-feedback@sent.com for any questions or concerns regarding security of our services.
+Please contact team@sent.dm for any questions or concerns regarding security of our services.
 
 ---
 

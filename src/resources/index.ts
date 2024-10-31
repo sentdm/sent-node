@@ -1,8 +1,5 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export * from './shared';
-export { Contact } from './contact/contact';
-export { ContactListResponse, ContactListParams, Contacts } from './contacts';
 export {
   MessageCreateResponse,
   MessagePhoneNumberResponse,
@@ -10,6 +7,12 @@ export {
   MessagePhoneNumberParams,
   Messages,
 } from './messages';
+export {
+  SentDmServicesContractsDataContactDto,
+  ContactListResponse,
+  ContactListParams,
+  Contacts,
+} from './contacts/contacts';
 export {
   SentDmServicesContractsDataCustomerDto,
   CustomerDeleteResponse,
