@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sent from 'sent';
-import { APIUserAbortError } from 'sent';
-import { Headers } from 'sent/core';
+import Sent from '@sent/node';
+import { APIUserAbortError } from '@sent/node';
+import { Headers } from '@sent/node/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {
