@@ -3,7 +3,7 @@
 import * as SMSAPI from './sms';
 import * as WhatsappAPI from './whatsapp';
 
-export interface Contact {
+export interface SentDmServicesContractsDataContactDto {
   id?: string;
 
   availableChannels?: string;
@@ -20,11 +20,11 @@ export interface Contact {
 
   phoneNumber?: string;
 
-  smsPayloadDTO?: SMSAPI.SMSPayload;
+  smsPayloadDTO?: SMSAPI.SentDmServicesContractsDataSMSPayloadDto;
 
   updatedAt?: string;
 
   verified?: boolean;
 
-  whatsappPayloadDTO?: WhatsappAPI.WhatsappPayload;
+  whatsappPayloadDTO?: WhatsappAPI.SentDmServicesContractsDataWhatsappPayloadDto;
 }

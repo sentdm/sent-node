@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sent from 'sent';
+import Sent from 'sentdm';
 import { Response } from 'node-fetch';
 
 const client = new Sent({
@@ -27,7 +27,7 @@ describe('resource whatsapp', () => {
     const response = await client.whatsapp.list({
       phoneNumber: 'phoneNumber',
       retrieveIfDoesNotExists: true,
-      sentId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      sentId: 'sentId',
     });
   });
 });

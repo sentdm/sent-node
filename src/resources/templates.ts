@@ -9,7 +9,11 @@ export class Templates extends APIResource {
     return this._client.post('/templates', { body, ...options });
   }
 
-  retrieve(customerId: string, id: string, options?: Core.RequestOptions): Core.APIPromise<TemplateResponse> {
+  retrieve(
+    customerId: string,
+    id: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<SentDmServicesContractsResponsesTemplateResponse> {
     return this._client.get(`/templates/${customerId}/${id}`, options);
   }
 
@@ -26,7 +30,7 @@ export class Templates extends APIResource {
   }
 }
 
-export interface TemplateResponse {
+export interface SentDmServicesContractsResponsesTemplateResponse {
   id?: string;
 
   category?: string;
@@ -50,7 +54,7 @@ export type TemplateCreateResponse = unknown;
 
 export type TemplateUpdateResponse = unknown;
 
-export type TemplateListResponse = Array<TemplateResponse>;
+export type TemplateListResponse = Array<SentDmServicesContractsResponsesTemplateResponse>;
 
 export type TemplateDeleteResponse = unknown;
 
@@ -75,7 +79,7 @@ export interface TemplateListParams {
 }
 
 export namespace Templates {
-  export import TemplateResponse = TemplatesAPI.TemplateResponse;
+  export import SentDmServicesContractsResponsesTemplateResponse = TemplatesAPI.SentDmServicesContractsResponsesTemplateResponse;
   export import TemplateCreateResponse = TemplatesAPI.TemplateCreateResponse;
   export import TemplateUpdateResponse = TemplatesAPI.TemplateUpdateResponse;
   export import TemplateListResponse = TemplatesAPI.TemplateListResponse;

@@ -1,12 +1,13 @@
 {
-  "name": "sent",
+
+  "name": "sentdm",
   "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Sent API",
-  "author": "Sent <team@sent.com>",
+  "author": "Sent <team@sent.dm>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:stainless-sdks/sent-node",
+  "repository": "github:sentdm/sent-node",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [
@@ -60,8 +61,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "sent": ".",
-    "sent/*": "./src/*"
+    "sentdm": ".",
+    "sentdm/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sent from 'sent';
+import Sent from 'sentdm';
 import { Response } from 'node-fetch';
 
 const client = new Sent({
@@ -21,10 +21,7 @@ describe('resource templates', () => {
   });
 
   test('retrieve', async () => {
-    const responsePromise = client.templates.retrieve(
-      '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-    );
+    const responsePromise = client.templates.retrieve('customerId', 'id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -37,11 +34,7 @@ describe('resource templates', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.templates.retrieve(
-        '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { path: '/_stainless_unknown_path' },
-      ),
+      client.templates.retrieve('customerId', 'id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sent.NotFoundError);
   });
 
@@ -57,7 +50,7 @@ describe('resource templates', () => {
   });
 
   test('list: only required params', async () => {
-    const responsePromise = client.templates.list({ customerId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
+    const responsePromise = client.templates.list({ customerId: 'customerId' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -68,14 +61,11 @@ describe('resource templates', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await client.templates.list({ customerId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
+    const response = await client.templates.list({ customerId: 'customerId' });
   });
 
   test('delete', async () => {
-    const responsePromise = client.templates.delete(
-      '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-    );
+    const responsePromise = client.templates.delete('customerId', 'id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -88,11 +78,7 @@ describe('resource templates', () => {
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.templates.delete(
-        '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { path: '/_stainless_unknown_path' },
-      ),
+      client.templates.delete('customerId', 'id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sent.NotFoundError);
   });
 });
