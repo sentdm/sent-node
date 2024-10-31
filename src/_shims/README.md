@@ -1,9 +1,9 @@
 # 👋 Wondering what everything in here does?
 
-`@sentdm/node` supports a wide variety of runtime environments like Node.js, Deno, Bun, browsers, and various
+`sent` supports a wide variety of runtime environments like Node.js, Deno, Bun, browsers, and various
 edge runtimes, as well as both CommonJS (CJS) and EcmaScript Modules (ESM).
 
-To do this, `@sentdm/node` provides shims for either using `node-fetch` when in Node (because `fetch` is still experimental there) or the global `fetch` API built into the environment when not in Node.
+To do this, `sent` provides shims for either using `node-fetch` when in Node (because `fetch` is still experimental there) or the global `fetch` API built into the environment when not in Node.
 
 It uses [conditional exports](https://nodejs.org/api/packages.html#conditional-exports) to
 automatically select the correct shims for each environment. However, conditional exports are a fairly new
@@ -15,32 +15,32 @@ getting the wrong raw `Response` type from `.asResponse()`, for example.
 
 The user can work around these issues by manually importing one of:
 
-- `import '@sentdm/node/shims/node'`
-- `import '@sentdm/node/shims/web'`
+- `import 'sent/shims/node'`
+- `import 'sent/shims/web'`
 
 All of the code here in `_shims` handles selecting the automatic default shims or manual overrides.
 
 ### How it works - Runtime
 
-Runtime shims get installed by calling `setShims` exported by `@sentdm/node/_shims/registry`.
+Runtime shims get installed by calling `setShims` exported by `sent/_shims/registry`.
 
-Manually importing `@sentdm/node/shims/node` or `@sentdm/node/shims/web`, calls `setShims` with the respective runtime shims.
+Manually importing `sent/shims/node` or `sent/shims/web`, calls `setShims` with the respective runtime shims.
 
-All client code imports shims from `@sentdm/node/_shims/index`, which:
+All client code imports shims from `sent/_shims/index`, which:
 
 - checks if shims have been set manually
-- if not, calls `setShims` with the shims from `@sentdm/node/_shims/auto/runtime`
-- re-exports the installed shims from `@sentdm/node/_shims/registry`.
+- if not, calls `setShims` with the shims from `sent/_shims/auto/runtime`
+- re-exports the installed shims from `sent/_shims/registry`.
 
-`@sentdm/node/_shims/auto/runtime` exports web runtime shims.
-If the `node` export condition is set, the export map replaces it with `@sentdm/node/_shims/auto/runtime-node`.
+`sent/_shims/auto/runtime` exports web runtime shims.
+If the `node` export condition is set, the export map replaces it with `sent/_shims/auto/runtime-node`.
 
 ### How it works - Type time
 
-All client code imports shim types from `@sentdm/node/_shims/index`, which selects the manual types from `@sentdm/node/_shims/manual-types` if they have been declared, otherwise it exports the auto types from `@sentdm/node/_shims/auto/types`.
+All client code imports shim types from `sent/_shims/index`, which selects the manual types from `sent/_shims/manual-types` if they have been declared, otherwise it exports the auto types from `sent/_shims/auto/types`.
 
-`@sentdm/node/_shims/manual-types` exports an empty namespace.
-Manually importing `@sentdm/node/shims/node` or `@sentdm/node/shims/web` merges declarations into this empty namespace, so they get picked up by `@sentdm/node/_shims/index`.
+`sent/_shims/manual-types` exports an empty namespace.
+Manually importing `sent/shims/node` or `sent/shims/web` merges declarations into this empty namespace, so they get picked up by `sent/_shims/index`.
 
-`@sentdm/node/_shims/auto/types` exports web type definitions.
-If the `node` export condition is set, the export map replaces it with `@sentdm/node/_shims/auto/types-node`, though TS only picks this up if `"moduleResolution": "nodenext"` or `"moduleResolution": "bundler"`.
+`sent/_shims/auto/types` exports web type definitions.
+If the `node` export condition is set, the export map replaces it with `sent/_shims/auto/types-node`, though TS only picks this up if `"moduleResolution": "nodenext"` or `"moduleResolution": "bundler"`.

@@ -2,14 +2,10 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ContactsAPI from './contacts';
+import * as Shared from '../shared';
 
 export class ID extends APIResource {
-  retrieve(
-    customerId: string,
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ContactsAPI.SentDmServicesContractsDataContactDto> {
-    return this._client.get(`/contacts/${customerId}/id/${id}`, options);
+  retrieve(customerId: string, id: string, options?: Core.RequestOptions): Core.APIPromise<Shared.Contact> {
+    return this._client.get(`/contact/${customerId}/id/${id}`, options);
   }
 }

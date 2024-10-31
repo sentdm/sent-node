@@ -6,9 +6,9 @@
     "rootDir": "./deno",
     "lib": ["es2020", "DOM"],
     "paths": {
-      "@sentdm/node/_shims/auto/*": ["deno/_shims/auto/*-deno"],
-      "@sentdm/node/*": ["deno/*"],
-      "@sentdm/node": ["deno/index.ts"],
+      "sent/_shims/auto/*": ["deno/_shims/auto/*-deno"],
+      "sent/*": ["deno/*"],
+      "sent": ["deno/index.ts"],
     },
     "noEmit": true,
     "declaration": true,

@@ -5,15 +5,12 @@ import * as Core from '../core';
 import * as WhatsappAPI from './whatsapp';
 
 export class Whatsapp extends APIResource {
-  list(
-    query: WhatsappListParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SentDmServicesContractsDataWhatsappPayloadDto> {
+  list(query: WhatsappListParams, options?: Core.RequestOptions): Core.APIPromise<WhatsappPayload> {
     return this._client.get('/whatsapp', { query, ...options });
   }
 }
 
-export interface SentDmServicesContractsDataWhatsappPayloadDto {
+export interface WhatsappPayload {
   id?: string;
 
   countryCode?: string;
@@ -48,6 +45,6 @@ export interface WhatsappListParams {
 }
 
 export namespace Whatsapp {
-  export import SentDmServicesContractsDataWhatsappPayloadDto = WhatsappAPI.SentDmServicesContractsDataWhatsappPayloadDto;
+  export import WhatsappPayload = WhatsappAPI.WhatsappPayload;
   export import WhatsappListParams = WhatsappAPI.WhatsappListParams;
 }

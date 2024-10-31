@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sent from '@sentdm/node';
+import Sent from 'sent';
 import { Response } from 'node-fetch';
 
 const client = new Sent({
@@ -10,7 +10,11 @@ const client = new Sent({
 
 describe('resource contacts', () => {
   test('list: only required params', async () => {
-    const responsePromise = client.contacts.list({ customerId: 'customerId', page: 0, pageSize: 0 });
+    const responsePromise = client.contacts.list({
+      customerId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      page: 0,
+      pageSize: 0,
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,6 +25,10 @@ describe('resource contacts', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await client.contacts.list({ customerId: 'customerId', page: 0, pageSize: 0 });
+    const response = await client.contacts.list({
+      customerId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      page: 0,
+      pageSize: 0,
+    });
   });
 });

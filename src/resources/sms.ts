@@ -5,15 +5,12 @@ import * as Core from '../core';
 import * as SMSAPI from './sms';
 
 export class SMS extends APIResource {
-  list(
-    query: SMSListParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SentDmServicesContractsDataSMSPayloadDto> {
+  list(query: SMSListParams, options?: Core.RequestOptions): Core.APIPromise<SMSPayload> {
     return this._client.get('/sms', { query, ...options });
   }
 }
 
-export interface SentDmServicesContractsDataSMSPayloadDto {
+export interface SMSPayload {
   id?: string;
 
   countryCode?: string;
@@ -42,6 +39,6 @@ export interface SMSListParams {
 }
 
 export namespace SMS {
-  export import SentDmServicesContractsDataSMSPayloadDto = SMSAPI.SentDmServicesContractsDataSMSPayloadDto;
+  export import SMSPayload = SMSAPI.SMSPayload;
   export import SMSListParams = SMSAPI.SMSListParams;
 }

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sent from '@sentdm/node';
+import Sent from 'sent';
 import { Response } from 'node-fetch';
 
 const client = new Sent({
@@ -24,7 +24,7 @@ describe('resource sms', () => {
     const response = await client.sms.list({
       phoneNumber: 'phoneNumber',
       retrieveIfDoesNotExists: true,
-      sentId: 'sentId',
+      sentId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 });

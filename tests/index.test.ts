@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sent from '@sentdm/node';
-import { APIUserAbortError } from '@sentdm/node';
-import { Headers } from '@sentdm/node/core';
+import Sent from 'sent';
+import { APIUserAbortError } from 'sent';
+import { Headers } from 'sent/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {
@@ -151,13 +151,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['SENT_BASE_URL'] = ''; // empty
       const client = new Sent({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://api.sent.dm');
+      expect(client.baseURL).toEqual('https://sent.dm');
     });
 
     test('blank env variable', () => {
       process.env['SENT_BASE_URL'] = '  '; // blank
       const client = new Sent({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://api.sent.dm');
+      expect(client.baseURL).toEqual('https://sent.dm');
     });
   });
 

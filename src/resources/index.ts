@@ -1,5 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+export * from './shared';
+export { ContactListResponse, ContactListParams, Contacts } from './contacts/contacts';
+export { Customer, CustomerDeleteResponse, CustomerUpdateParams, Customers } from './customers';
 export {
   MessageCreateResponse,
   MessagePhoneNumberResponse,
@@ -7,22 +10,9 @@ export {
   MessagePhoneNumberParams,
   Messages,
 } from './messages';
+export { SMSPayload, SMSListParams, SMS } from './sms';
 export {
-  SentDmServicesContractsDataContactDto,
-  ContactListResponse,
-  ContactListParams,
-  Contacts,
-} from './contacts/contacts';
-export {
-  SentDmServicesContractsDataCustomerDto,
-  CustomerDeleteResponse,
-  CustomerUpdateParams,
-  Customers,
-} from './customers';
-export { SentDmServicesContractsDataSMSPayloadDto, SMSListParams, SMS } from './sms';
-export { SentDmServicesContractsDataWhatsappPayloadDto, WhatsappListParams, Whatsapp } from './whatsapp';
-export {
-  SentDmServicesContractsResponsesTemplateResponse,
+  TemplateResponse,
   TemplateCreateResponse,
   TemplateUpdateResponse,
   TemplateListResponse,
@@ -32,3 +22,4 @@ export {
   TemplateListParams,
   Templates,
 } from './templates';
+export { WhatsappPayload, WhatsappListParams, Whatsapp } from './whatsapp';

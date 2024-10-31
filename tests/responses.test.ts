@@ -1,5 +1,5 @@
-import { createResponseHeaders } from '@sentdm/node/core';
-import { Headers } from '@sentdm/node/_shims/index';
+import { createResponseHeaders } from 'sent/core';
+import { Headers } from 'sent/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

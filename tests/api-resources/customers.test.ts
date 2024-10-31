@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sent from '@sentdm/node';
+import Sent from 'sent';
 import { Response } from 'node-fetch';
 
 const client = new Sent({
@@ -10,7 +10,7 @@ const client = new Sent({
 
 describe('resource customers', () => {
   test('retrieve', async () => {
-    const responsePromise = client.customers.retrieve('id');
+    const responsePromise = client.customers.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,13 +22,13 @@ describe('resource customers', () => {
 
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.customers.retrieve('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sent.NotFoundError,
-    );
+    await expect(
+      client.customers.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sent.NotFoundError);
   });
 
   test('update', async () => {
-    const responsePromise = client.customers.update('id', {});
+    const responsePromise = client.customers.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -39,7 +39,7 @@ describe('resource customers', () => {
   });
 
   test('delete', async () => {
-    const responsePromise = client.customers.delete('id');
+    const responsePromise = client.customers.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -51,8 +51,8 @@ describe('resource customers', () => {
 
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.customers.delete('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sent.NotFoundError,
-    );
+    await expect(
+      client.customers.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sent.NotFoundError);
   });
 });
